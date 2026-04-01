@@ -1,0 +1,30 @@
+{
+  "name": "event-planner",
+  "display_name": "Event Planner",
+  "description": "Create and maintain notebook-backed event plans with pages for overview, guest lists, tasks, budgets, and reminders.",
+  "version": "0.1.0",
+  "capabilities": [
+    "notebook-create",
+    "notebook-page-create",
+    "notebook-page-update",
+    "reminder-create",
+    "reminder-update"
+  ],
+  "permissions": {
+    "tool_names": [
+      "notebook.list",
+      "notebook.get",
+      "notebook.create",
+      "notebook.update",
+      "notebook.page.list",
+      "notebook.page.get",
+      "notebook.page.create",
+      "notebook.page.update",
+      "reminder.list",
+      "reminder.get",
+      "reminder.create",
+      "reminder.update",
+      "time.current"
+    ]
+  }
+}

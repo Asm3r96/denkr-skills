@@ -1,34 +1,42 @@
 {
   "source": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/index.json",
-  "generated_at": "2026-03-31T20:16:25.1199859Z",
+  "generated_at": "2026-04-01T18:10:51.2823710Z",
   "skills": [
     {
-      "name": "journey-logbook",
-      "display_name": "Journey Logbook",
-      "description": "Create or reuse a journey, then save timeline-style logs into it using Denkr's built-in journey tools.",
+      "name": "event-planner",
+      "display_name": "Event Planner",
+      "description": "Create and maintain notebook-backed event plans with pages for overview, guest lists, tasks, budgets, and reminders.",
       "version": "0.1.0",
-      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/journey-logbook-0.1.0.zip",
-      "sha256": "92ef4ae657ec209660b2f1e4848c84dba92db87aee78232a94896441dee34007",
-      "size_bytes": 2281,
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/event-planner-0.1.0.zip",
+      "sha256": "e069f9a8d538d9adf0e1e44c10a52a8a227e64c6870803dd05d7cab5e0a5097b",
+      "size_bytes": 2359,
       "entry_file": "SKILL.md",
       "repo_owner": "Asm3r96",
       "repo_name": "denkr-skills",
       "branch": "main",
-      "published_at": "2026-03-31T20:16:25.1199859Z",
+      "published_at": "2026-04-01T18:10:51.2823710Z",
       "capabilities": [
-        "journey-create",
-        "journey-reuse",
-        "journey-log-create",
-        "journey-log-list"
+        "notebook-create",
+        "notebook-page-create",
+        "notebook-page-update",
+        "reminder-create",
+        "reminder-update"
       ],
       "permissions": {
         "tool_names": [
-          "journey.list",
-          "journey.get",
-          "journey.create",
-          "journey.update",
-          "journey.log.create",
-          "journey.log.list"
+          "notebook.list",
+          "notebook.get",
+          "notebook.create",
+          "notebook.update",
+          "notebook.page.list",
+          "notebook.page.get",
+          "notebook.page.create",
+          "notebook.page.update",
+          "reminder.list",
+          "reminder.get",
+          "reminder.create",
+          "reminder.update",
+          "time.current"
         ]
       }
     }
