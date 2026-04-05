@@ -1,70 +1,70 @@
-﻿{
-    "source":  "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/index.json",
-    "generated_at":  "2026-04-05T08:21:10.6932894Z",
-    "skills":  [
-                   {
-                       "name":  "event-planner",
-                       "display_name":  "Event Planner",
-                       "description":  "Create and maintain notebook-backed event plans with pages for overview, guest lists, tasks, budgets, and reminders.",
-                       "version":  "0.1.0",
-                       "download_url":  "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/event-planner-0.1.0.zip",
-                       "sha256":  "e069f9a8d538d9adf0e1e44c10a52a8a227e64c6870803dd05d7cab5e0a5097b",
-                       "size_bytes":  2359,
-                       "entry_file":  "SKILL.md",
-                       "repo_owner":  "Asm3r96",
-                       "repo_name":  "denkr-skills",
-                       "branch":  "main",
-                       "published_at":  "2026-04-01T18:10:51.2823710Z",
-                       "capabilities":  [
-                                            "notebook-create",
-                                            "notebook-page-create",
-                                            "notebook-page-update",
-                                            "reminder-create",
-                                            "reminder-update"
-                                        ],
-                       "permissions":  {
-                                           "tool_names":  [
-                                                              "notebook.list",
-                                                              "notebook.get",
-                                                              "notebook.create",
-                                                              "notebook.update",
-                                                              "notebook.page.list",
-                                                              "notebook.page.get",
-                                                              "notebook.page.create",
-                                                              "notebook.page.update",
-                                                              "reminder.list",
-                                                              "reminder.get",
-                                                              "reminder.create",
-                                                              "reminder.update",
-                                                              "time.current"
-                                                          ]
-                                       }
-                   },
-                   {
-                       "name":  "github-api",
-                       "display_name":  "GitHub API",
-                       "description":  "Use the GitHub REST API through denkr\u0027s universal api.call tool for repository, issue, pull request, file, and user read flows.",
-                       "version":  "0.1.0",
-                       "download_url":  "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/github-api-0.1.0.zip",
-                       "sha256":  "fb181324ad04c4dbbedac29e1740bc3231d7cdcf0d155ffdac41f08252ef4061",
-                       "size_bytes":  4459,
-                       "entry_file":  "SKILL.md",
-                       "repo_owner":  "Asm3r96",
-                       "repo_name":  "denkr-skills",
-                       "branch":  "main",
-                       "published_at":  "2026-04-05T08:21:10.6932894Z",
-                       "capabilities":  [
-                                            "api-call",
-                                            "github-repos-read",
-                                            "github-issues-read",
-                                            "github-pull-requests-read",
-                                            "github-files-read"
-                                        ],
-                       "permissions":  {
-                                           "tool_names":  [
-                                                              "api.call"
-                                                          ]
-                                       }
-                   }
-               ]
+{
+  "source": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/index.json",
+  "generated_at": "2026-04-05T08:31:32.8120537Z",
+  "skills": [
+    {
+      "name": "event-planner",
+      "display_name": "Event Planner",
+      "description": "Create and maintain notebook-backed event plans with pages for overview, guest lists, tasks, budgets, and reminders.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/event-planner-0.1.0.zip",
+      "sha256": "e069f9a8d538d9adf0e1e44c10a52a8a227e64c6870803dd05d7cab5e0a5097b",
+      "size_bytes": 2359,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-05T08:31:32.8120537Z",
+      "capabilities": [
+        "notebook-create",
+        "notebook-page-create",
+        "notebook-page-update",
+        "reminder-create",
+        "reminder-update"
+      ],
+      "permissions": {
+        "tool_names": [
+          "notebook.list",
+          "notebook.get",
+          "notebook.create",
+          "notebook.update",
+          "notebook.page.list",
+          "notebook.page.get",
+          "notebook.page.create",
+          "notebook.page.update",
+          "reminder.list",
+          "reminder.get",
+          "reminder.create",
+          "reminder.update",
+          "time.current"
+        ]
+      }
+    },
+    {
+      "name": "github-api",
+      "display_name": "GitHub API",
+      "description": "Use the GitHub REST API through denkr's universal api.call tool for repository, issue, pull request, file, and user read flows.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/github-api-0.1.0.zip",
+      "sha256": "ca5adcf52159383f71d8614ae71571389573998cef368c02b3bfd985f627847f",
+      "size_bytes": 4457,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-05T08:31:32.8120537Z",
+      "capabilities": [
+        "api-call",
+        "github-repos-read",
+        "github-issues-read",
+        "github-pull-requests-read",
+        "github-files-read"
+      ],
+      "permissions": {
+        "tool_names": [
+          "api.call"
+        ]
+      }
+    }
+  ]
 }

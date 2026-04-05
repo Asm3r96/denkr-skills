@@ -92,4 +92,6 @@ $manifest = [ordered]@{
 }
 
 $manifestPath = Join-Path $repoRoot "index.json"
-$manifest | ConvertTo-Json -Depth 8 | Set-Content -Path $manifestPath -Encoding utf8
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+$manifestJson = $manifest | ConvertTo-Json -Depth 8
+[System.IO.File]::WriteAllText($manifestPath, $manifestJson + [Environment]::NewLine, $utf8NoBom)
