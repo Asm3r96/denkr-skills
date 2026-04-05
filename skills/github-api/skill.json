@@ -1,0 +1,19 @@
+{
+  "name": "github-api",
+  "display_name": "GitHub API",
+  "description": "Use the GitHub REST API through denkr's universal api.call tool for repository, issue, pull request, file, and user read flows.",
+  "version": "0.1.0",
+  "capabilities": [
+    "api-call",
+    "github-repos-read",
+    "github-issues-read",
+    "github-pull-requests-read",
+    "github-files-read"
+  ],
+  "permissions": {
+    "tool_names": [
+      "api.call"
+    ]
+  }
+}
+
