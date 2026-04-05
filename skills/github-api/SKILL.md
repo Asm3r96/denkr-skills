@@ -18,6 +18,7 @@ Help the assistant call the GitHub REST API through `api.call` with the right en
 
 - Never ask the user to paste a GitHub token into chat.
 - Never put the raw API key value in the tool args. Use the saved key name `GITHUB_API_KEY`.
+- The saved `GITHUB_API_KEY` must be bound to the exact allowed host `api.github.com`.
 - Prefer read-only GitHub API flows unless the user explicitly asks for a mutation and confirms it.
 - If the API returns `401`, `403`, or an auth error, assume the key may be missing, invalid, or missing permissions and read `references/set-api-key.md`.
 - Use GitHub's documented `Accept: application/vnd.github+json` header for normal REST calls.
@@ -129,4 +130,3 @@ Current authenticated user:
 - If GitHub responds with `404`, say the repo, issue, pull request, user, or file path may not exist or may not be visible to the current token.
 - If the API returns rate-limit headers showing low remaining quota, tell the user the GitHub API rate limit may be the blocker.
 - Never pretend the API succeeded when `api.call` failed.
-

@@ -16,8 +16,18 @@ Use this reference when the GitHub API request fails because authorization is mi
 4. Tap the add flow and set:
    - Name: `GITHUB_API_KEY`
    - Value: the copied GitHub token
+   - Allowed hosts: `api.github.com`
 5. Save it.
 6. Tell the assistant that the key has been saved so the request can be tried again.
+
+## Important note about allowed hosts
+
+- Use the hostname only, not a full URL.
+- Correct: `api.github.com`
+- Do not enter: `https://api.github.com/user`
+- Do not enter: `github.com`
+
+If GitHub API calls are still blocked after saving, check that the allowed host is exactly `api.github.com`.
 
 ## Permission guidance
 
@@ -32,4 +42,3 @@ For read-focused GitHub API use:
 the user should create a token with the minimum read scopes needed for those actions.
 
 If the task later expands into mutations such as creating issues or updating pull requests, the assistant should tell the user that broader GitHub token permissions may be required.
-
