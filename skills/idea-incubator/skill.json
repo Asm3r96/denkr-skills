@@ -1,0 +1,20 @@
+{
+  "name": "idea-incubator",
+  "display_name": "Idea Incubator",
+  "description": "Shape rough ideas into clearer notebook pages with questions, risks, next steps, and optional follow-up reminders.",
+  "version": "0.1.0",
+  "capabilities": [
+    "idea-structuring",
+    "notebook-read",
+    "notebook-write",
+    "reminder-write"
+  ],
+  "permissions": {
+    "tool_names": [
+      "notebook.read",
+      "notebook.write",
+      "reminder.write",
+      "time.current"
+    ]
+  }
+}

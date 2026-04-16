@@ -1,0 +1,20 @@
+{
+  "name": "decision-helper",
+  "display_name": "Decision Helper",
+  "description": "Structure choices in notebook pages with options, criteria, tradeoffs, recommendations, and later review reminders.",
+  "version": "0.1.0",
+  "capabilities": [
+    "decision-structuring",
+    "notebook-read",
+    "notebook-write",
+    "reminder-write"
+  ],
+  "permissions": {
+    "tool_names": [
+      "notebook.read",
+      "notebook.write",
+      "reminder.write",
+      "time.current"
+    ]
+  }
+}

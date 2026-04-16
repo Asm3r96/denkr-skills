@@ -1,0 +1,17 @@
+{
+  "name": "notebooks",
+  "display_name": "Notebooks",
+  "description": "Create, organize, search, and update notebooks and notebook pages with readable markdown structure.",
+  "version": "0.1.0",
+  "capabilities": [
+    "notebook-read",
+    "notebook-write",
+    "notebook-page-search"
+  ],
+  "permissions": {
+    "tool_names": [
+      "notebook.read",
+      "notebook.write"
+    ]
+  }
+}

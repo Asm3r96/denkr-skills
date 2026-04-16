@@ -1,96 +1,263 @@
 {
-    "source":  "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/index.json",
-    "generated_at":  "2026-04-05T09:01:50.3270038Z",
-    "skills":  [
-                   {
-                       "name":  "event-planner",
-                       "display_name":  "Event Planner",
-                       "description":  "Create and maintain notebook-backed event plans with pages for overview, guest lists, tasks, budgets, and reminders.",
-                       "version":  "0.1.0",
-                       "download_url":  "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/event-planner-0.1.0.zip",
-                       "sha256":  "5af38474f27cb944ccfb63db9560cb19e8fe5c36214b6385060d23bfd17e77a8",
-                       "size_bytes":  2373,
-                       "entry_file":  "SKILL.md",
-                       "repo_owner":  "Asm3r96",
-                       "repo_name":  "denkr-skills",
-                       "branch":  "main",
-                       "published_at":  "2026-04-05T09:01:50.3270038Z",
-                       "capabilities":  [
-                                            "notebook-create",
-                                            "notebook-page-create",
-                                            "notebook-page-update",
-                                            "reminder-create",
-                                            "reminder-update"
-                                        ],
-                       "permissions":  {
-                                           "tool_names":  [
-                                                              "notebook.list",
-                                                              "notebook.get",
-                                                              "notebook.create",
-                                                              "notebook.update",
-                                                              "notebook.page.list",
-                                                              "notebook.page.get",
-                                                              "notebook.page.create",
-                                                              "notebook.page.update",
-                                                              "reminder.list",
-                                                              "reminder.get",
-                                                              "reminder.create",
-                                                              "reminder.update",
-                                                              "time.current"
-                                                          ]
-                                       }
-                   },
-                   {
-                       "name":  "football-data-api",
-                       "display_name":  "Football-Data API",
-                       "description":  "Use football-data.org v4 through denkr\u0027s universal api.call tool for fixtures, results, standings, scorers, teams, and competition read flows.",
-                       "version":  "0.1.0",
-                       "download_url":  "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/football-data-api-0.1.0.zip",
-                       "sha256":  "e2c1c69581b574a7f7bf6fe05e519887ec61e5505643813469842e2f8ed67eed",
-                       "size_bytes":  3174,
-                       "entry_file":  "SKILL.md",
-                       "repo_owner":  "Asm3r96",
-                       "repo_name":  "denkr-skills",
-                       "branch":  "main",
-                       "published_at":  "2026-04-05T09:01:50.3270038Z",
-                       "capabilities":  [
-                                            "api-call",
-                                            "football-competitions-read",
-                                            "football-matches-read",
-                                            "football-standings-read",
-                                            "football-teams-read"
-                                        ],
-                       "permissions":  {
-                                           "tool_names":  [
-                                                              "api.call"
-                                                          ]
-                                       }
-                   },
-                   {
-                       "name":  "github-api",
-                       "display_name":  "GitHub API",
-                       "description":  "Use the GitHub REST API through denkr\u0027s universal api.call tool for repository, issue, pull request, file, and user read flows.",
-                       "version":  "0.1.0",
-                       "download_url":  "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/github-api-0.1.0.zip",
-                       "sha256":  "6f784b7fd3ef83a01cb8ff3096099e0284bcd23de7910f47f6c801de75602485",
-                       "size_bytes":  4636,
-                       "entry_file":  "SKILL.md",
-                       "repo_owner":  "Asm3r96",
-                       "repo_name":  "denkr-skills",
-                       "branch":  "main",
-                       "published_at":  "2026-04-05T09:01:50.3270038Z",
-                       "capabilities":  [
-                                            "api-call",
-                                            "github-repos-read",
-                                            "github-issues-read",
-                                            "github-pull-requests-read",
-                                            "github-files-read"
-                                        ],
-                       "permissions":  {
-                                           "tool_names":  [
-                                                              "api.call"
-                                                          ]
-                                       }
-                   }
-               ]
+  "source": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/index.json",
+  "generated_at": "2026-04-16T19:30:00.000Z",
+  "skills": [
+    {
+      "name": "decision-helper",
+      "display_name": "Decision Helper",
+      "description": "Structure choices in notebook pages with options, criteria, tradeoffs, recommendations, and later review reminders.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/decision-helper-0.1.0.zip",
+      "sha256": "f0a200af171c588b629159a53a67a0ee37dd03dfac17bad45565811197075673",
+      "size_bytes": 2483,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-16T19:30:00.000Z",
+      "capabilities": [
+        "decision-structuring",
+        "notebook-read",
+        "notebook-write",
+        "reminder-write"
+      ],
+      "permissions": {
+        "tool_names": [
+          "notebook.read",
+          "notebook.write",
+          "reminder.write",
+          "time.current"
+        ]
+      }
+    },
+    {
+      "name": "event-planner",
+      "display_name": "Event Planner",
+      "description": "Create and maintain notebook-backed event plans with pages for overview, guest lists, tasks, budgets, and reminders.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/event-planner-0.1.0.zip",
+      "sha256": "5af38474f27cb944ccfb63db9560cb19e8fe5c36214b6385060d23bfd17e77a8",
+      "size_bytes": 2373,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-05T09:01:50.3270038Z",
+      "capabilities": [
+        "notebook-create",
+        "notebook-page-create",
+        "notebook-page-update",
+        "reminder-create",
+        "reminder-update"
+      ],
+      "permissions": {
+        "tool_names": [
+          "notebook.list",
+          "notebook.get",
+          "notebook.create",
+          "notebook.update",
+          "notebook.page.list",
+          "notebook.page.get",
+          "notebook.page.create",
+          "notebook.page.update",
+          "reminder.list",
+          "reminder.get",
+          "reminder.create",
+          "reminder.update",
+          "time.current"
+        ]
+      }
+    },
+    {
+      "name": "football-data-api",
+      "display_name": "Football-Data API",
+      "description": "Use football-data.org v4 through denkr's universal api.call tool for fixtures, results, standings, scorers, teams, and competition read flows.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/football-data-api-0.1.0.zip",
+      "sha256": "e2c1c69581b574a7f7bf6fe05e519887ec61e5505643813469842e2f8ed67eed",
+      "size_bytes": 3174,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-05T09:01:50.3270038Z",
+      "capabilities": [
+        "api-call",
+        "football-competitions-read",
+        "football-matches-read",
+        "football-standings-read",
+        "football-teams-read"
+      ],
+      "permissions": {
+        "tool_names": [
+          "api.call"
+        ]
+      }
+    },
+    {
+      "name": "github-api",
+      "display_name": "GitHub API",
+      "description": "Use the GitHub REST API through denkr's universal api.call tool for repository, issue, pull request, file, and user read flows.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/github-api-0.1.0.zip",
+      "sha256": "6f784b7fd3ef83a01cb8ff3096099e0284bcd23de7910f47f6c801de75602485",
+      "size_bytes": 4636,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-05T09:01:50.3270038Z",
+      "capabilities": [
+        "api-call",
+        "github-repos-read",
+        "github-issues-read",
+        "github-pull-requests-read",
+        "github-files-read"
+      ],
+      "permissions": {
+        "tool_names": [
+          "api.call"
+        ]
+      }
+    },
+    {
+      "name": "habit-coach",
+      "display_name": "Habit Coach",
+      "description": "Turn a goal into a repeatable routine using notebook pages for the plan and reminders for follow-through.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/habit-coach-0.1.0.zip",
+      "sha256": "887d1276e2edcb5e960db0c156af3814231d3cbe336cdb52cef57474d9ac379a",
+      "size_bytes": 2737,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-16T19:30:00.000Z",
+      "capabilities": [
+        "habit-planning",
+        "notebook-read",
+        "notebook-write",
+        "reminder-read",
+        "reminder-write"
+      ],
+      "permissions": {
+        "tool_names": [
+          "notebook.read",
+          "notebook.write",
+          "reminder.read",
+          "reminder.write",
+          "time.current"
+        ]
+      }
+    },
+    {
+      "name": "idea-incubator",
+      "display_name": "Idea Incubator",
+      "description": "Shape rough ideas into clearer notebook pages with questions, risks, next steps, and optional follow-up reminders.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/idea-incubator-0.1.0.zip",
+      "sha256": "8ba32efeab157e458a419c5cc285b22a462332ca40143b707843962d687d4802",
+      "size_bytes": 2541,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-16T19:30:00.000Z",
+      "capabilities": [
+        "idea-structuring",
+        "notebook-read",
+        "notebook-write",
+        "reminder-write"
+      ],
+      "permissions": {
+        "tool_names": [
+          "notebook.read",
+          "notebook.write",
+          "reminder.write",
+          "time.current"
+        ]
+      }
+    },
+    {
+      "name": "notebooks",
+      "display_name": "Notebooks",
+      "description": "Create, organize, search, and update notebooks and notebook pages with readable markdown structure.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/notebooks-0.1.0.zip",
+      "sha256": "78daa4f1222fcb0108a739ebfab9e5ff830a59e33afd7c1e3197fd540770a059",
+      "size_bytes": 3050,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-16T19:30:00.000Z",
+      "capabilities": [
+        "notebook-read",
+        "notebook-write",
+        "notebook-page-search"
+      ],
+      "permissions": {
+        "tool_names": [
+          "notebook.read",
+          "notebook.write"
+        ]
+      }
+    },
+    {
+      "name": "reminders",
+      "display_name": "Reminders",
+      "description": "Create, inspect, and update reminders with grounded timing, alert choice, and clear future follow-ups.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/reminders-0.1.0.zip",
+      "sha256": "a5fe7953ac62d65276be7efef11b516331c8c6e7ca5181b1dd24c2b83a093ea4",
+      "size_bytes": 2584,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-16T19:30:00.000Z",
+      "capabilities": [
+        "time-current",
+        "reminder-read",
+        "reminder-write"
+      ],
+      "permissions": {
+        "tool_names": [
+          "time.current",
+          "reminder.read",
+          "reminder.write"
+        ]
+      }
+    },
+    {
+      "name": "trip-planner",
+      "display_name": "Trip Planner",
+      "description": "Organize travel plans in notebook pages and add reminders for deadlines like booking, packing, and departure.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/trip-planner-0.1.0.zip",
+      "sha256": "b6e243f33f6ae20a0774cb5cbdaefb20e4e4fab0f1bff18625e207464ecb031f",
+      "size_bytes": 2538,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-16T19:30:00.000Z",
+      "capabilities": [
+        "trip-planning",
+        "notebook-read",
+        "notebook-write",
+        "reminder-read",
+        "reminder-write"
+      ],
+      "permissions": {
+        "tool_names": [
+          "notebook.read",
+          "notebook.write",
+          "reminder.read",
+          "reminder.write",
+          "time.current"
+        ]
+      }
+    }
+  ]
 }

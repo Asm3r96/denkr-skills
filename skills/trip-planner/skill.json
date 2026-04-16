@@ -1,0 +1,22 @@
+{
+  "name": "trip-planner",
+  "display_name": "Trip Planner",
+  "description": "Organize travel plans in notebook pages and add reminders for deadlines like booking, packing, and departure.",
+  "version": "0.1.0",
+  "capabilities": [
+    "trip-planning",
+    "notebook-read",
+    "notebook-write",
+    "reminder-read",
+    "reminder-write"
+  ],
+  "permissions": {
+    "tool_names": [
+      "notebook.read",
+      "notebook.write",
+      "reminder.read",
+      "reminder.write",
+      "time.current"
+    ]
+  }
+}

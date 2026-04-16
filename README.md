@@ -6,8 +6,14 @@ This repo contains the optional skills that can be available for Denkr.
 
 Current public skills:
 
+- `decision-helper`
 - `event-planner`
+- `habit-coach`
+- `idea-incubator`
+- `notebooks`
+- `reminders`
 - `github-api`
+- `trip-planner`
 
 More skills will be added over time.
 

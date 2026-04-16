@@ -1,0 +1,22 @@
+{
+  "name": "habit-coach",
+  "display_name": "Habit Coach",
+  "description": "Turn a goal into a repeatable routine using notebook pages for the plan and reminders for follow-through.",
+  "version": "0.1.0",
+  "capabilities": [
+    "habit-planning",
+    "notebook-read",
+    "notebook-write",
+    "reminder-read",
+    "reminder-write"
+  ],
+  "permissions": {
+    "tool_names": [
+      "notebook.read",
+      "notebook.write",
+      "reminder.read",
+      "reminder.write",
+      "time.current"
+    ]
+  }
+}
