@@ -1,0 +1,28 @@
+{
+  "name": "google-calendar",
+  "display_name": "Google Calendar",
+  "description": "Use Google Calendar through denkr's Google OAuth skill auth to list upcoming events from the user's primary calendar.",
+  "version": "0.1.0",
+  "capabilities": [
+    "api-call",
+    "oauth-google",
+    "google-calendar-read"
+  ],
+  "permissions": {
+    "tool_names": [
+      "api.call",
+      "time.current"
+    ],
+    "oauth": {
+      "provider": "google",
+      "token_ref": "google.primary",
+      "scopes": [
+        "https://www.googleapis.com/auth/calendar.readonly"
+      ],
+      "allowed_domains": [
+        "www.googleapis.com"
+      ],
+      "access": "read"
+    }
+  }
+}

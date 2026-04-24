@@ -1,6 +1,6 @@
 {
   "source": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/index.json",
-  "generated_at": "2026-04-16T19:30:00.000Z",
+  "generated_at": "2026-04-24T09:33:23.641Z",
   "skills": [
     {
       "name": "decision-helper",
@@ -118,6 +118,42 @@
         "tool_names": [
           "api.call"
         ]
+      }
+    },
+    {
+      "name": "google-calendar",
+      "display_name": "Google Calendar",
+      "description": "Use Google Calendar through denkr's Google OAuth skill auth to list upcoming events from the user's primary calendar.",
+      "version": "0.1.0",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/google-calendar-0.1.0.zip",
+      "sha256": "a5da6b37a9395ba030b4937b0f905b4a8b56e4ee9baf70e5dc096d47a71436be",
+      "size_bytes": 1842,
+      "entry_file": "SKILL.md",
+      "repo_owner": "Asm3r96",
+      "repo_name": "denkr-skills",
+      "branch": "main",
+      "published_at": "2026-04-24T09:33:23.641Z",
+      "capabilities": [
+        "api-call",
+        "oauth-google",
+        "google-calendar-read"
+      ],
+      "permissions": {
+        "tool_names": [
+          "api.call",
+          "time.current"
+        ],
+        "oauth": {
+          "provider": "google",
+          "token_ref": "google.primary",
+          "scopes": [
+            "https://www.googleapis.com/auth/calendar.readonly"
+          ],
+          "allowed_domains": [
+            "www.googleapis.com"
+          ],
+          "access": "read"
+        }
       }
     },
     {
