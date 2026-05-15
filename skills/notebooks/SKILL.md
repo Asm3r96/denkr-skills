@@ -120,6 +120,7 @@ Rules:
 - For callout `variant`, use only `info`, `success`, `warning`, or `danger`.
 - For task items, use `done: true` or `done: false`.
 - For data tables, define `columns` first and make each row an object keyed by column id.
+- For metric grid values, prefer strings for display values like `"3"` or `"100%"`.
 - For metric grid and progress `tone`, use only `neutral`, `info`, `success`, `warning`, or `danger`.
 - For progress, use numeric `value`; `max` defaults to `100` when omitted.
 - Use `body`, not `content`.

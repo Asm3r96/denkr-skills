@@ -2,7 +2,7 @@
   "name": "notebooks",
   "display_name": "Notebooks",
   "description": "Create, organize, search, and update notebooks and notebook pages with readable markdown and supported Denkr UI blocks.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "capabilities": [
     "notebook-read",
     "notebook-write",
