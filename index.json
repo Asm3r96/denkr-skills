@@ -1,6 +1,6 @@
 {
   "source": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/index.json",
-  "generated_at": "2026-05-15T13:07:28.971Z",
+  "generated_at": "2026-05-15T13:17:52.107Z",
   "skills": [
     {
       "name": "decision-helper",
@@ -217,16 +217,16 @@
     {
       "name": "notebooks",
       "display_name": "Notebooks",
-      "description": "Create, organize, search, and update notebooks and notebook pages with readable markdown and supported Denkr UI blocks.",
-      "version": "0.3.1",
-      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/notebooks-0.3.1.zip",
-      "sha256": "7566e76c07db5b1579bd3048938d68295159d87da86e7a230f837da28b7c2e06",
-      "size_bytes": 4362,
+      "description": "Create, organize, search, and update notebooks and notebook pages with readable markdown and supported fenced-JSON Denkr UI blocks. Use when writing notebook UI; never use HTML-style denkr-ui tags.",
+      "version": "0.3.2",
+      "download_url": "https://raw.githubusercontent.com/Asm3r96/denkr-skills/main/packages/notebooks-0.3.2.zip",
+      "sha256": "4424cac82181b07faafedaa81d827e4518cd883fbfb9c0b3c054dcdf58db5c6c",
+      "size_bytes": 4788,
       "entry_file": "SKILL.md",
       "repo_owner": "Asm3r96",
       "repo_name": "denkr-skills",
       "branch": "main",
-      "published_at": "2026-05-15T13:07:28.970Z",
+      "published_at": "2026-05-15T13:17:52.107Z",
       "capabilities": [
         "notebook-read",
         "notebook-write",

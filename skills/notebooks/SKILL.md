@@ -1,6 +1,6 @@
 ---
 name: notebooks
-description: "Create, organize, search, and update notebooks and notebook pages with readable markdown and supported Denkr UI blocks."
+description: "Create, organize, search, and update notebooks and notebook pages with readable markdown and supported fenced-JSON Denkr UI blocks. Use when writing notebook UI; never use HTML-style denkr-ui tags."
 ---
 
 <skill>
@@ -12,7 +12,7 @@ description: "Create, organize, search, and update notebooks and notebook pages 
 
 # Goal
 
-Use notebooks as the user's visible book of pages. Keep notebook content readable, structured, and aligned with each notebook's `writingRules`, using markdown first. When a page benefits from native UI, use only the supported Denkr UI blocks in this skill.
+Use notebooks as the user's visible book of pages. Keep notebook content readable, structured, and aligned with each notebook's `writingRules`, using markdown first. When a page benefits from native UI, use only fenced `denkr-ui` JSON blocks from this skill.
 
 # Guardrails
 
@@ -22,6 +22,7 @@ Use notebooks as the user's visible book of pages. Keep notebook content readabl
 - Never claim a notebook or notebook page was created, updated, deleted, or found unless the matching tool succeeded.
 - Keep notebook pages readable for the user. Prefer structured markdown over raw text dumps.
 - Do not invent UI blocks. Current Denkr UI support is only `callout`, `task_list`, `data_table`, `metric_grid`, and `progress`.
+- Never write HTML-style UI tags such as `<denkr-ui ... />`. Denkr UI blocks must be fenced JSON only.
 
 # Instructions
 
@@ -31,13 +32,31 @@ Use notebooks as the user's visible book of pages. Keep notebook content readabl
 4. Reuse an existing notebook when it already fits the person, project, topic, or life area. Create a new notebook only when the content deserves its own visible container, then keep the title short, the description clear, and the `writingRules` practical.
 5. Treat pages as the real content surface. Reuse a page when it matches the notebook's `writingRules`; create a new page when the content belongs to a new month, trip, idea, topic, or other notebook-defined unit.
 6. Write page content as clean markdown. Use headings, bullet lists, numbered lists, and markdown task lists such as `- [ ]` or `- [x]` when they make the page easier to scan or maintain.
-7. Use `denkr-ui` blocks only for supported native UI: callouts, task lists, data tables, metric grids, and progress bars. Keep block and item IDs stable when editing existing UI blocks.
+7. Use `denkr-ui` blocks only as fenced JSON blocks. Keep block and item IDs stable when editing existing UI blocks.
 8. Choose page placement intentionally with `notebook.write` and `action: update_page`: append for running notes, prepend for short top summaries, insert under a matching heading for structured pages, or replace only when a full rewrite is truly needed.
 9. In the final reply, describe the notebook or page change plainly and only after the tool has confirmed success.
 
 # Denkr UI Blocks
 
 Use normal markdown by default. Use `denkr-ui` only when native UI improves the page.
+
+Critical format rule: Denkr UI is **not HTML**. The app does not render `<denkr-ui ... />` tags. Always write one fenced JSON block:
+
+````markdown
+```denkr-ui
+{"version":1,"blocks":[]}
+```
+````
+
+Never write:
+
+```html
+<denkr-ui type="progress" value="85" />
+<denkr-ui type="card" title="Project" />
+<denkr-ui type="stat" label="Done" value="3" />
+```
+
+If you want a card/stat-like result, use `metric_grid`. If you want a note, use `callout`. If you want a bar, use `progress`.
 
 Supported blocks:
 - `callout`
@@ -49,9 +68,11 @@ Supported blocks:
 Do not use:
 - buttons or actions
 - cards
+- stats
 - charts
 - images
 - HTML, CSS, or JavaScript
+- `<denkr-ui ... />` tags
 - `actions`
 
 Preferred format:
@@ -125,6 +146,7 @@ Rules:
 - For progress, use numeric `value`; `max` defaults to `100` when omitted.
 - Use `body`, not `content`.
 - Use `done`, not `completed`.
+- Before saving, check the page content contains no `<denkr-ui` text and no unsupported block types such as `card`, `stat`, `chart`, `button`, `image`, or `actions`.
 - Do not put more than a few UI blocks on one page. Keep prose readable.
 
 # Error Handling
