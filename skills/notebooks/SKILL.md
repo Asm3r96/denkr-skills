@@ -12,7 +12,7 @@ description: "Create, organize, search, and update notebooks and notebook pages 
 
 # Goal
 
-Use notebooks as the user's visible book of pages. Keep notebook content readable, structured, and aligned with each notebook's `writingRules`, using markdown headings, bullet lists, numbered lists, and checkbox todo lists when they improve clarity.
+Use notebooks as the user's visible book of pages. Keep notebook content readable, structured, and aligned with each notebook's `writingRules`, using markdown first. When a page benefits from native UI, use only the supported Denkr UI blocks in this skill.
 
 # Guardrails
 
@@ -21,6 +21,7 @@ Use notebooks as the user's visible book of pages. Keep notebook content readabl
 - Never guess notebook state, page state, or saved content if notebook tools fail or return empty results.
 - Never claim a notebook or notebook page was created, updated, deleted, or found unless the matching tool succeeded.
 - Keep notebook pages readable for the user. Prefer structured markdown over raw text dumps.
+- Do not invent UI blocks. Current Denkr UI support is only `callout` and `task_list`.
 
 # Instructions
 
@@ -29,9 +30,64 @@ Use notebooks as the user's visible book of pages. Keep notebook content readabl
 3. If the user is looking for a past note inside one notebook, use `notebook.read` with `action: list_pages` and the `query` parameter before opening pages one by one.
 4. Reuse an existing notebook when it already fits the person, project, topic, or life area. Create a new notebook only when the content deserves its own visible container, then keep the title short, the description clear, and the `writingRules` practical.
 5. Treat pages as the real content surface. Reuse a page when it matches the notebook's `writingRules`; create a new page when the content belongs to a new month, trip, idea, topic, or other notebook-defined unit.
-6. Write page content as clean markdown. Use headings, bullet lists, numbered lists, and task lists such as `- [ ]` or `- [x]` when they make the page easier to scan or maintain.
-7. Choose page placement intentionally with `notebook.write` and `action: update_page`: append for running notes, prepend for short top summaries, insert under a matching heading for structured pages, or replace only when a full rewrite is truly needed.
-8. In the final reply, describe the notebook or page change plainly and only after the tool has confirmed success.
+6. Write page content as clean markdown. Use headings, bullet lists, numbered lists, and markdown task lists such as `- [ ]` or `- [x]` when they make the page easier to scan or maintain.
+7. Use `denkr-ui` blocks only for callouts or task lists that should render as native interactive UI. Keep block and item IDs stable when editing existing UI blocks.
+8. Choose page placement intentionally with `notebook.write` and `action: update_page`: append for running notes, prepend for short top summaries, insert under a matching heading for structured pages, or replace only when a full rewrite is truly needed.
+9. In the final reply, describe the notebook or page change plainly and only after the tool has confirmed success.
+
+# Denkr UI Blocks
+
+Use normal markdown by default. Use `denkr-ui` only when native UI improves the page.
+
+Supported blocks:
+- `callout`
+- `task_list`
+
+Do not use:
+- tables as UI blocks
+- buttons or actions
+- cards
+- charts
+- images
+- HTML, CSS, or JavaScript
+- `data_table`, `metric_grid`, or `actions`
+
+Preferred format:
+
+````markdown
+```denkr-ui
+{
+  "version": 1,
+  "blocks": [
+    {
+      "type": "callout",
+      "id": "note_deadline",
+      "title": "Optional title",
+      "body": "Short callout body.",
+      "variant": "info"
+    },
+    {
+      "type": "task_list",
+      "id": "launch_tasks",
+      "title": "Optional title",
+      "items": [
+        {"id": "task_1", "text": "First task", "done": false},
+        {"id": "task_2", "text": "Completed task", "done": true}
+      ]
+    }
+  ]
+}
+```
+````
+
+Rules:
+- Use only ASCII-safe IDs such as `launch_tasks`, `task_1`, or `note_deadline`.
+- Preserve existing block IDs and task item IDs when editing a page. Denkr uses those IDs to preserve checked state.
+- For callout `variant`, use only `info`, `success`, `warning`, or `danger`.
+- For task items, use `done: true` or `done: false`.
+- Use `body`, not `content`.
+- Use `done`, not `completed`.
+- Do not put more than a few UI blocks on one page. Keep prose readable.
 
 # Error Handling
 
@@ -53,3 +109,7 @@ Result: "I found the API cost note in your Denkr notebook and opened the matchin
 User: "Add a packing checklist to the Vienna trip page."
 Action: Read the notebook and page if needed, then call `notebook.write` with `action: update_page` and an insert under the right heading with markdown todo items like `- [ ] Passport`.
 Result: "I added a packing checklist to the Vienna trip page."
+
+User: "Make this notebook page easier to scan with UI."
+Action: Use markdown for the main page and add a `denkr-ui` callout or task_list only where it improves readability. Do not invent unsupported UI elements.
+Result: "I updated the page with a callout and an interactive task list."
