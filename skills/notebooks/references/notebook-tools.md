@@ -15,6 +15,6 @@
   - bullet lists for quick notes
   - numbered lists for sequences
   - checkbox todo lists like `- [ ] Book hotel`
-- Native `denkr-ui` blocks are limited to `callout` and `task_list`.
+- Native `denkr-ui` blocks are limited to `callout`, `task_list`, `data_table`, `metric_grid`, and `progress`.
 - Use `denkr-ui` only when native UI improves the notebook page.
-- Do not use unsupported UI blocks such as tables, metrics, buttons, cards, charts, images, HTML, CSS, or JavaScript.
+- Do not use unsupported UI blocks such as buttons, actions, cards, charts, images, HTML, CSS, or JavaScript.

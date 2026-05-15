@@ -1,6 +1,6 @@
 ---
 name: notebooks
-description: "Create, organize, search, and update notebooks and notebook pages with readable markdown structure."
+description: "Create, organize, search, and update notebooks and notebook pages with readable markdown and supported Denkr UI blocks."
 ---
 
 <skill>
@@ -21,7 +21,7 @@ Use notebooks as the user's visible book of pages. Keep notebook content readabl
 - Never guess notebook state, page state, or saved content if notebook tools fail or return empty results.
 - Never claim a notebook or notebook page was created, updated, deleted, or found unless the matching tool succeeded.
 - Keep notebook pages readable for the user. Prefer structured markdown over raw text dumps.
-- Do not invent UI blocks. Current Denkr UI support is only `callout` and `task_list`.
+- Do not invent UI blocks. Current Denkr UI support is only `callout`, `task_list`, `data_table`, `metric_grid`, and `progress`.
 
 # Instructions
 
@@ -31,7 +31,7 @@ Use notebooks as the user's visible book of pages. Keep notebook content readabl
 4. Reuse an existing notebook when it already fits the person, project, topic, or life area. Create a new notebook only when the content deserves its own visible container, then keep the title short, the description clear, and the `writingRules` practical.
 5. Treat pages as the real content surface. Reuse a page when it matches the notebook's `writingRules`; create a new page when the content belongs to a new month, trip, idea, topic, or other notebook-defined unit.
 6. Write page content as clean markdown. Use headings, bullet lists, numbered lists, and markdown task lists such as `- [ ]` or `- [x]` when they make the page easier to scan or maintain.
-7. Use `denkr-ui` blocks only for callouts or task lists that should render as native interactive UI. Keep block and item IDs stable when editing existing UI blocks.
+7. Use `denkr-ui` blocks only for supported native UI: callouts, task lists, data tables, metric grids, and progress bars. Keep block and item IDs stable when editing existing UI blocks.
 8. Choose page placement intentionally with `notebook.write` and `action: update_page`: append for running notes, prepend for short top summaries, insert under a matching heading for structured pages, or replace only when a full rewrite is truly needed.
 9. In the final reply, describe the notebook or page change plainly and only after the tool has confirmed success.
 
@@ -42,15 +42,17 @@ Use normal markdown by default. Use `denkr-ui` only when native UI improves the 
 Supported blocks:
 - `callout`
 - `task_list`
+- `data_table`
+- `metric_grid`
+- `progress`
 
 Do not use:
-- tables as UI blocks
 - buttons or actions
 - cards
 - charts
 - images
 - HTML, CSS, or JavaScript
-- `data_table`, `metric_grid`, or `actions`
+- `actions`
 
 Preferred format:
 
@@ -74,6 +76,38 @@ Preferred format:
         {"id": "task_1", "text": "First task", "done": false},
         {"id": "task_2", "text": "Completed task", "done": true}
       ]
+    },
+    {
+      "type": "data_table",
+      "id": "weekly_schedule",
+      "title": "Optional title",
+      "columns": [
+        {"id": "day", "label": "Day"},
+        {"id": "plan", "label": "Plan"}
+      ],
+      "rows": [
+        {"day": "Monday", "plan": "Draft"},
+        {"day": "Tuesday", "plan": "Review"}
+      ]
+    },
+    {
+      "type": "metric_grid",
+      "id": "project_metrics",
+      "title": "Optional title",
+      "metrics": [
+        {"id": "open", "label": "Open tasks", "value": "3", "tone": "warning"},
+        {"id": "done", "label": "Done", "value": "8", "caption": "this week", "tone": "success"}
+      ]
+    },
+    {
+      "type": "progress",
+      "id": "project_progress",
+      "title": "Optional title",
+      "label": "Overall progress",
+      "value": 60,
+      "max": 100,
+      "caption": "6 of 10 steps done",
+      "tone": "success"
     }
   ]
 }
@@ -85,6 +119,9 @@ Rules:
 - Preserve existing block IDs and task item IDs when editing a page. Denkr uses those IDs to preserve checked state.
 - For callout `variant`, use only `info`, `success`, `warning`, or `danger`.
 - For task items, use `done: true` or `done: false`.
+- For data tables, define `columns` first and make each row an object keyed by column id.
+- For metric grid and progress `tone`, use only `neutral`, `info`, `success`, `warning`, or `danger`.
+- For progress, use numeric `value`; `max` defaults to `100` when omitted.
 - Use `body`, not `content`.
 - Use `done`, not `completed`.
 - Do not put more than a few UI blocks on one page. Keep prose readable.
@@ -111,5 +148,5 @@ Action: Read the notebook and page if needed, then call `notebook.write` with `a
 Result: "I added a packing checklist to the Vienna trip page."
 
 User: "Make this notebook page easier to scan with UI."
-Action: Use markdown for the main page and add a `denkr-ui` callout or task_list only where it improves readability. Do not invent unsupported UI elements.
-Result: "I updated the page with a callout and an interactive task list."
+Action: Use markdown for the main page and add supported `denkr-ui` blocks only where they improve readability. Use `data_table` for column data, `metric_grid` for small status summaries, and `progress` for one progress bar. Do not invent unsupported UI elements.
+Result: "I updated the page with supported Denkr UI blocks."
